@@ -1,0 +1,5 @@
+{
+  "_readme": "siteUrl: the confirmed production URL, no trailing slash (e.g. https://your-domain.com). While it is empty the build emits NO canonical URL, og:url, og:image, absolute JSON-LD urls or sitemap, because inventing a domain would be wrong. Set it (or the SITE_URL environment variable, e.g. in Vercel project settings) and rebuild. allowAiTraining: false adds robots.txt opt-outs for model-training crawlers; search and user-triggered crawlers stay allowed either way.",
+  "siteUrl": "",
+  "allowAiTraining": false
+}

@@ -1,0 +1,17 @@
+# Search crawlers and user-triggered AI fetchers are allowed.
+User-agent: *
+Allow: /
+
+# AI model-training crawlers: opted out (set allowAiTraining to true in site.config.json to allow).
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+

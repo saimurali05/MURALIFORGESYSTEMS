@@ -1,0 +1,24 @@
+MURALI FORGE SYSTEMS - website
+==============================
+
+EASIEST: no install, no terminal
+  1. Extract this zip  (right-click > Extract All).
+  2. Open the extracted folder and double-click   OPEN-SITE.html
+     (or open  dist\index.html ).  The site opens in your browser.
+
+OR RUN A LOCAL SERVER  (needs Node.js)
+  Double-click   start-site.bat
+  or, in PowerShell inside this folder:   npm start
+  then open  http://127.0.0.1:5173
+
+TO EDIT AND REBUILD
+  npm install
+  npm run dev        live rebuild at http://127.0.0.1:5173
+  npm run build      writes the finished site to dist\
+
+TIPS
+  - Run npm only inside the folder that contains package.json.  Check with:  npm pkg get name
+    It must print "mfs-site".  If it prints something else you are inside a different project,
+    because npm silently uses the nearest package.json in a parent folder.
+  - Keep node_modules out of OneDrive-synced folders (for example use C:\dev\mfs-site).
+  - All demos are simulations that run in your browser. Nothing is sent, saved or connected.

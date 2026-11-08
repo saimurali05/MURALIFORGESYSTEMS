@@ -1,0 +1,138 @@
+/* ===== Automation stage (Services) — AutomationStage.tsx =====
+   Everything is driven by data-step / --step written by useTimeline. Reached helpers: --r1 (step ≥ 1) … --r4 (step ≥ 4). */
+.ae-wrap { margin-bottom: clamp(48px, 6vw, 96px); }
+.ae {
+  --step: 0; --r1: clamp(0, var(--step), 1); --r2: clamp(0, calc(var(--step) - 1), 1); --r3: clamp(0, calc(var(--step) - 2), 1); --r4: clamp(0, calc(var(--step) - 3), 1);
+  --on-edge: rgba(var(--acc), 0.66);
+  --on-glow: inset 0 1px 0 rgba(var(--tint), 0.24), 0 0 0 4px rgba(var(--acc), 0.09), 0 0 44px -10px rgba(var(--acc), 0.5), 0 18px 32px -18px rgba(var(--sh), calc(0.95 * var(--shk)));
+  padding: clamp(14px, 1.8vw, 26px); display: grid; gap: clamp(12px, 1.6vw, 22px);
+}
+.ae__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 18px; }
+.ae__logos { font-size: 0.72rem; color: var(--taupe); opacity: 0.8; }
+
+/* ---------- canvas (desktop) ---------- */
+.ae__canvas { container-type: inline-size; position: relative; }
+.ae__scene--h { position: relative; aspect-ratio: 1200 / 500; font-size: clamp(11.5px, 1.2cqw, 15px); }
+.ae__scene--v { display: none; }
+.ae__wires { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ae__at { position: absolute; transform: translate(-50%, -50%); }
+.ae__at--ev { width: 20.9%; height: 31.6%; } .ae__at--en { width: 24.2%; height: 47.2%; } .ae__at--out { width: 66.7%; height: 11.4%; }
+.ae__at > .ae__panel { width: 100%; height: 100%; }
+
+/* ---------- parts ---------- */
+.ae__panel {
+  box-sizing: border-box; border-radius: 1.15em; padding: 1.05em 1.2em; display: grid; align-content: center; gap: 0.35em; min-width: 0;
+  background: linear-gradient(160deg, rgba(var(--tint), 0.075), rgba(var(--tint), 0.015)), rgba(var(--base), 0.8);
+  border: 1px solid rgba(var(--tint), 0.12); box-shadow: inset 0 1px 0 rgba(var(--tint), 0.14), inset 0 -1px 0 rgba(var(--sh), calc(0.5 * var(--shk))), 0 20px 36px -20px rgba(var(--sh), calc(0.95 * var(--shk)));
+  transition: border-color 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out), opacity 0.6s var(--ease-out), filter 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+.ae .tile { --t: 3.9em; font-size: inherit; }
+.ae .tile--sm { --t: 3em; }
+.ae small { display: block; }
+
+.ae__ev-top { display: flex; align-items: center; justify-content: space-between; gap: 0.8em; }
+.ae__tag { font-size: 0.66em; letter-spacing: 0.2em; text-transform: uppercase; color: var(--champagne); font-weight: 500; }
+.ae__src { display: inline-flex; gap: 0.55em; }
+.ae__who { font-family: var(--font-display); font-size: 1.3em; line-height: 1.15; color: var(--ivory); }
+.ae__msg { font-size: 0.96em; line-height: 1.35; color: var(--ivory); opacity: 0.88; }
+.ae__meta { font-size: 0.66em; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); }
+
+.ae__en-top { display: flex; align-items: center; gap: 0.9em; }
+.ae__en-top b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 1.2em; line-height: 1.1; color: var(--ivory); }
+.ae__en-top small { font-size: 0.78em; color: var(--taupe); margin-top: 0.15em; }
+.ae__steps { display: grid; gap: 0.5em; margin-top: 0.45em; }
+.ae__steps li { display: grid; grid-template-columns: 1.45em auto 1fr; align-items: center; gap: 0.7em; font-size: 0.92em; line-height: 1.2;
+  opacity: calc(0.5 + 0.5 * var(--r2)); transition: opacity 0.5s var(--ease-out) calc(0.2s + var(--k) * 0.55s); }
+.ae__steps b { font-weight: 500; color: var(--ivory); }
+.ae__steps span { color: var(--taupe); font-size: 0.9em; }
+.ae__steps i { position: relative; width: 1.45em; height: 1.45em; border-radius: 50%; border: 1px solid rgba(var(--tint), 0.42); display: grid; place-items: center; }
+.ae__steps i::before { content: ''; position: absolute; inset: -1px; border-radius: 50%; background: linear-gradient(180deg, var(--champagne), var(--copper));
+  opacity: var(--r2); transform: scale(calc(0.55 + 0.45 * var(--r2))); transition: opacity 0.45s var(--ease-out) calc(0.25s + var(--k) * 0.55s), transform 0.45s var(--ease-out) calc(0.25s + var(--k) * 0.55s); }
+.ae__steps svg { position: relative; z-index: 1; width: 0.9em; height: 0.9em; color: var(--on-acc); opacity: var(--r2); transition: opacity 0.3s var(--ease-out) calc(0.38s + var(--k) * 0.55s); }
+
+.ae__cap2 b, .ae__apptxt b { display: block; font-weight: 500; font-size: 0.98em; color: var(--ivory); line-height: 1.2; }
+.ae__cap2 small, .ae__apptxt small { font-size: 0.82em; color: var(--taupe); margin-top: 0.2em; line-height: 1.3; }
+.ae__tr { display: grid; justify-items: center; gap: 0.75em; text-align: center; width: 11em; transform: translate(-50%, -1.95em); }
+.ae__app { display: flex; align-items: center; gap: 1em; width: max-content; transform: translate(-1.95em, -50%); }
+.ae__apptxt small { opacity: var(--r3); transform: translateX(calc(-6px * (1 - var(--r3)))); transition: opacity 0.5s var(--ease-out) calc(0.45s + var(--k) * 0.32s), transform 0.5s var(--ease-out) calc(0.45s + var(--k) * 0.32s); }
+
+.ae__out { grid-auto-flow: column; justify-content: start; align-items: center; gap: 0.9em; padding-block: 0.6em; }
+.ae__ok { width: 2em; height: 2em; flex: none; color: var(--champagne); }
+.ae__out p { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3em 1.3em; font-size: 1em; }
+.ae__out b { font-family: var(--font-display); font-weight: 400; font-size: 1.12em; color: var(--ivory); }
+.ae__out span { display: inline-flex; flex-wrap: wrap; gap: 0.2em 1em; }
+.ae__out em { font-style: normal; font-size: 0.82em; color: var(--champagne); letter-spacing: 0.02em; }
+
+/* ---------- state by step ---------- */
+.ae__tr .tile, .ae__tr .ae__cap2 { opacity: calc(0.38 + 0.62 * var(--r1)); filter: saturate(calc(0.4 + 0.6 * var(--r1))); }
+.ae__en { opacity: calc(0.42 + 0.58 * var(--r2)); filter: saturate(calc(0.5 + 0.5 * var(--r2))); }
+.ae__app .tile { opacity: calc(0.38 + 0.62 * var(--r3)); filter: saturate(calc(0.4 + 0.6 * var(--r3))); transition-delay: calc(0.15s + var(--k) * 0.32s); }
+.ae__out { opacity: calc(0.3 + 0.7 * var(--r4)); filter: saturate(calc(0.45 + 0.55 * var(--r4))); }
+
+.ae[data-step="0"] .ae__ev, .ae[data-step="2"] .ae__en { border-color: var(--on-edge); box-shadow: var(--on-glow); }
+.ae[data-step="1"] .ae__tr .tile, .ae:is([data-step="3"], [data-step="4"]) .ae__app .tile { border-color: var(--on-edge); box-shadow: var(--on-glow); transform: translateY(-2px) scale(1.04); }
+.ae:is([data-step="2"], [data-step="3"], [data-step="4"]) .ae__tr .tile { border-color: rgba(var(--acc), 0.55); }
+.ae:is([data-step="3"], [data-step="4"]) .ae__en { border-color: rgba(var(--acc), 0.5); }
+.ae[data-step="4"] .ae__out { border-color: rgba(var(--acc), 0.5); box-shadow: inset 0 1px 0 rgba(var(--tint), 0.2), 0 0 52px -14px rgba(var(--acc), 0.45), 0 20px 36px -20px rgba(var(--sh), calc(0.95 * var(--shk))); }
+
+/* wires: copper light draws in along the quiet bronze line; one packet follows it */
+.ae .wire--live { stroke-dashoffset: 1; opacity: 1; transition: stroke-dashoffset 0.85s var(--ease-io); filter: drop-shadow(0 0 3px rgba(var(--acc), 0.65)); }
+.ae .ae__l1 { stroke-dashoffset: calc(1 - var(--r1)); transition-delay: 0.1s; }
+.ae .ae__l2 { stroke-dashoffset: calc(1 - var(--r2)); transition-delay: 0.1s; }
+.ae .ae__l3 { stroke-dashoffset: calc(1 - var(--r3)); transition-delay: calc(0.15s + var(--k) * 0.32s); }
+.ae__pk { fill: none; stroke: var(--accent-ink); stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 0.03 2; stroke-dashoffset: 0; opacity: 0; filter: drop-shadow(0 0 5px rgba(255, 214, 176, 0.95)); }
+.ae[data-step="1"] .ae__pk1 { animation: ae-pk 0.95s var(--ease-io) 0.15s both; }
+.ae[data-step="2"] .ae__pk2 { animation: ae-pk 0.95s var(--ease-io) 0.15s both; }
+.ae[data-step="3"] .ae__pk3 { animation: ae-pk 0.95s var(--ease-io) calc(0.2s + var(--k) * 0.32s) both; }
+@keyframes ae-pk { 0% { opacity: 0; stroke-dashoffset: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; stroke-dashoffset: -1; } }
+
+/* a restart (step 0) snaps the scene back unseen, then fades the canvas in */
+.ae[data-step="0"] .ae__scene, .ae[data-step="0"] .ae__scene * { transition: none !important; }
+.ae[data-step="0"] .ae__canvas { animation: ae-in 0.9s var(--ease-out) both; }
+@keyframes ae-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ---------- narration + step rail ---------- */
+.ae__foot { display: grid; gap: clamp(12px, 1.4vw, 18px); padding-top: clamp(12px, 1.4vw, 18px); border-top: 1px solid rgba(var(--tint), 0.5); }
+.ae__caps { display: grid; min-height: 2.7em; }
+.ae__cap { grid-area: 1 / 1; font-family: var(--font-display); font-size: clamp(1rem, 1.45vw, 1.28rem); line-height: 1.32; color: var(--ivory); text-wrap: balance;
+  opacity: 0; transform: translateY(6px); transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out); }
+.ae[data-step="0"] .ae__cap--0, .ae[data-step="1"] .ae__cap--1, .ae[data-step="2"] .ae__cap--2, .ae[data-step="3"] .ae__cap--3, .ae[data-step="4"] .ae__cap--4 { opacity: 1; transform: none; }
+.ae__rail { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); list-style: none; margin: 0; padding: 0; }
+.ae__rail::before, .ae__rail::after { content: ''; position: absolute; left: 10%; width: 80%; top: 13px; height: 1px; }
+.ae__rail::before { background: rgba(var(--tint), 0.75); }
+.ae__rail::after { background: linear-gradient(90deg, var(--copper), var(--champagne)); transform-origin: left; transform: scaleX(calc(var(--step) / 4)); transition: transform 0.8s var(--ease-io); }
+.ae__step { display: grid; justify-items: center; gap: 8px; width: 100%; min-height: 44px; padding: 0 4px 4px; background: none; border: 0; border-radius: 10px; color: var(--taupe); font: inherit; cursor: pointer; }
+.ae__step b { position: relative; z-index: 1; display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; border: 1px solid var(--bronze-smoke); background: #0d0b0b;
+  font: 500 0.7rem var(--font-body); letter-spacing: 0.02em; color: var(--taupe); transition: border-color 0.4s, background 0.4s, color 0.4s, box-shadow 0.4s; }
+.ae__step span { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
+.ae__step:hover span { color: var(--ivory); }
+.ae__step.is-done b { border-color: var(--copper-muted); color: var(--champagne); }
+.ae__step[aria-current='step'] b { border-color: rgba(var(--tint), 0.5); color: var(--on-acc); background: linear-gradient(180deg, var(--champagne), var(--copper)); box-shadow: 0 0 0 4px rgba(var(--acc), 0.14); }
+.ae__step[aria-current='step'] span { color: var(--ivory); }
+
+/* ---------- narrow screens: a vertical flow with spine lines ---------- */
+@media (max-width: 1099px) {
+  .ae__scene--h { display: none; }
+  .ae__scene--v { display: grid; width: 100%; max-width: 580px; margin-inline: auto; font-size: 14px; }
+  .ae__scene--v .tile { --t: 48px; font-size: 14px; }
+  .ae__scene--v .ae__panel { width: 100%; height: auto; padding: 14px 16px; border-radius: 16px; }
+  .ae__scene--v .ae__tr, .ae__scene--v .ae__app { transform: none; width: auto; display: flex; align-items: center; gap: 14px; text-align: left; justify-items: unset; }
+  .ae__scene--v .ae__tr .tile, .ae__scene--v .ae__tr .ae__cap2 { opacity: calc(0.38 + 0.62 * var(--r1)); }
+  .ae__scene--v .ae__out { margin-top: 0; }
+  .ae__seg { display: block; position: relative; width: 2px; height: 26px; margin-left: 23px; background: rgba(var(--acc), 0.3); }
+  .ae__seg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, var(--copper), var(--champagne)); box-shadow: 0 0 8px rgba(var(--acc), 0.6);
+    transform-origin: top; transform: scaleY(var(--rn, 0)); transition: transform 0.7s var(--ease-io) calc(0.1s + var(--k, 0) * 0.32s); }
+  .ae__seg--1::after { --rn: var(--r1); } .ae__seg--2::after { --rn: var(--r2); } .ae__seg--3::after { --rn: var(--r3); } .ae__seg--4::after { --rn: var(--r4); }
+  .ae__scene--v .ae__ev, .ae__scene--v .ae__en { height: auto; }
+  .ae__scene--v .ae__steps li { font-size: 0.95em; }
+  .ae__scene--v .ae__out { grid-auto-flow: row; gap: 8px; }
+  .ae__scene--v .ae__out p { display: grid; gap: 6px; }
+}
+@media (max-width: 560px) {
+  .ae__step span { font-size: 0.6rem; letter-spacing: 0.08em; }
+  .ae__rail::before, .ae__rail::after { left: 10%; width: 80%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ae *, .ae *::before, .ae *::after { transition: none !important; animation: none !important; }
+  .ae__pk { display: none; }
+}

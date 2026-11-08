@@ -1,0 +1,45 @@
+/* ===== Shared kit for the cinematic sections (automation · advantage · process · closing) =====
+   Every stage is built from the same few parts so the sections read as one family:
+   .stage (instrument panel) · .tile (app/node) · .wire (connection) · .badge (label) · .lamp (light pool, see glass.css)
+   Sequencing comes from useTimeline(): it sets data-step="n" on the stage; CSS reacts to [data-step]. */
+
+/* instrument panel: raised glass + a fine technical grid that fades toward the edges */
+.stage { position: relative; isolation: isolate; border-radius: 26px; overflow: hidden; }
+.stage__grid { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.9;
+  background-image: linear-gradient(rgba(var(--acc), 0.065) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--acc), 0.065) 1px, transparent 1px);
+  background-size: 44px 44px; background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 78% at 50% 48%, #000 22%, transparent 78%); mask-image: radial-gradient(ellipse 70% 78% at 50% 48%, #000 22%, transparent 78%); }
+
+/* tile: an app / node. Brand marks keep their own colours inside it. */
+.tile { --t: 56px; position: relative; flex: none; width: var(--t); height: var(--t); border-radius: 16px; display: grid; place-items: center;
+  background: linear-gradient(160deg, var(--gl-card-a), var(--gl-card-b));
+  border: 1px solid var(--line);
+  box-shadow: inset 0 1px 0 var(--gl-hi), var(--e2);
+  transition: border-color 0.55s var(--ease-out), box-shadow 0.55s var(--ease-out), transform 0.55s var(--ease-out), opacity 0.55s var(--ease-out), filter 0.55s var(--ease-out); }
+.tile--sm { --t: 44px; border-radius: 13px; } .tile--lg { --t: 72px; border-radius: 20px; }
+.tile.is-on { border-color: var(--accent-ink); transform: translateY(-2px) scale(1.03);
+  box-shadow: inset 0 1px 0 var(--gl-hi), 0 0 0 3px rgba(var(--acc), 0.22), var(--e3); }
+.tile.is-done { border-color: rgba(var(--acc), 0.55); }
+.tile.is-dim { opacity: 0.4; filter: saturate(0.45); }
+.tile__cap { display: block; margin-top: 8px; font-size: 0.72rem; line-height: 1.25; color: var(--taupe); letter-spacing: 0.02em; text-align: center; }
+
+/* wire: SVG connection. Base path is a quiet bronze line; .wire--live is the copper light that travels along it.
+   Give the live path pathLength="1" and toggle .is-on (stroke-dashoffset 1 → 0). */
+.wire { fill: none; stroke: rgba(var(--acc), 0.28); stroke-width: 1.4; stroke-linecap: round; }
+.wire--dash { stroke-dasharray: 3 6; }
+.wire--live { fill: none; stroke: var(--copper); stroke-width: 1.8; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0.95;
+  transition: stroke-dashoffset var(--wire-dur, 0.9s) var(--ease-io), opacity 0.5s; }
+.wire--live.is-on { stroke-dashoffset: 0; }
+
+/* badge: small uppercase label */
+.badge { display: inline-flex; align-items: center; gap: 8px; min-height: 26px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(var(--base), 0.6);
+  color: var(--taupe); font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; line-height: 1; white-space: nowrap; }
+.badge i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
+.badge--live { color: var(--champagne); border-color: rgba(var(--acc), 0.45); }
+
+
+/* readable mini-interface text inside stages */
+.ui-line { height: 6px; border-radius: 3px; background: rgba(var(--tint), 0.12); }
+.ui-line--short { width: 42%; } .ui-line--mid { width: 68%; }
+
+@media (prefers-reduced-motion: reduce) { .tile, .wire--live { transition: none; } }

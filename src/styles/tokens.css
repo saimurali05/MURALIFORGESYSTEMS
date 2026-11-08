@@ -1,0 +1,100 @@
+/* MFS design tokens — Ivory Graphite × soft opaque glass. */
+@font-face { font-family: 'Inter'; font-weight: 400; font-style: normal; font-display: swap; src: url('../fonts/inter-400.woff') format('woff'); }
+@font-face { font-family: 'Inter'; font-weight: 500; font-style: normal; font-display: swap; src: url('../fonts/inter-500.woff') format('woff'); }
+@font-face { font-family: 'Inter'; font-weight: 600; font-style: normal; font-display: swap; src: url('../fonts/inter-600.woff') format('woff'); }
+@font-face { font-family: 'GFS Baskerville'; font-weight: 400; font-style: normal; font-display: swap; src: url('../fonts/gfs-baskerville.woff') format('woff'); }
+
+:root, .th-light, .th-dark {
+  /* ===== official MFS palette — Ivory Graphite (master brief) ===== */
+  --p-ivory: #F9F6EF;      /* warm ivory — primary light background */
+  --p-cream: #F2EDE3;      /* soft cream — secondary light background */
+  --p-sand: #E8E1D6;      /* sand beige — elevated surfaces */
+  --p-graphite: #343A3A;   /* graphite — main dark identity */
+  --p-charcoal: #171918;   /* deep charcoal — deep backgrounds */
+  --p-champagne: #B99865;  /* champagne gold — premium accent */
+  --p-taupe: #8C8173;      /* muted taupe — secondary text */
+  --p-silver: #CFC8BC;     /* warm silver — borders and details */
+  --font-display: 'GFS Baskerville', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ===== theme scopes: every component reads semantic tokens, so any section can be light or dark ===== */
+:root, .th-light {
+  --bg: #F9F6EF; --bg-2: #F2EDE3; --bg-3: #E8E1D6;
+  --fg: #171918; --fg-dim: #4F524F; --fg-faint: #6F675B;
+  --accent: #B99865; --accent-ink: #7A5F32; --acc: 185, 152, 101;   /* accent: decoration · accent-ink: text/strokes that must pass contrast */
+  --card: #F4EFE5;                  /* solid card surface */
+  --tint: 52, 58, 58;               /* rgb used for hairlines / veils on this theme */
+  --base: 249, 246, 239;            /* rgb of the page colour (for fades) */
+  --sh: 52, 58, 58; --shk: 0.2;     /* shadow rgb + strength */
+  --edge: rgba(255, 255, 255, 0.82); /* glass light edge */
+  --err: #9C3B2E; --ok: #46604F;
+  --line: rgba(52, 58, 58, 0.14); --line-strong: rgba(122, 95, 50, 0.42);
+  --on-acc: #171918;
+  --b1-bg: #343A3A; --b1-bg-h: #171918; --b1-fg: #F9F6EF; --b1-bd: #171918; --b1-mark: #B99865;   /* primary */
+  --b2-bg: rgba(249, 246, 239, 0.92); --b2-bg-h: #FFFFFF; --b2-fg: #171918; --b2-bd: rgba(52, 58, 58, 0.55);  /* secondary */
+  color-scheme: light;
+}
+.th-dark {
+  --bg: #171918; --bg-2: #1D201F; --bg-3: #343A3A;
+  --fg: #F9F6EF; --fg-dim: #CFC8BC; --fg-faint: #9A9183;
+  --accent: #B99865; --accent-ink: #D1B27D; --acc: 201, 170, 120;
+  --card: #232726;
+  --tint: 249, 246, 239; --base: 23, 25, 24;
+  --sh: 0, 0, 0; --shk: 1;
+  --edge: rgba(249, 246, 239, 0.16);
+  --err: #E9998A; --ok: #A9BFA6;
+  --line: rgba(249, 246, 239, 0.15); --line-strong: rgba(201, 170, 120, 0.5);
+  --on-acc: #171918;
+  --b1-bg: #F9F6EF; --b1-bg-h: #FFFFFF; --b1-fg: #171918; --b1-bd: #F9F6EF; --b1-mark: #8A6A36;
+  --b2-bg: rgba(52, 58, 58, 0.9); --b2-bg-h: #3E4545; --b2-fg: #F9F6EF; --b2-bd: rgba(249, 246, 239, 0.4);
+  color-scheme: dark;
+}
+.th-light, .th-dark { background: var(--bg); color: var(--fg); }
+
+/* ===== legacy aliases (stylesheets written for the obsidian theme keep working; they now follow the scope) ===== */
+:root, .th-light, .th-dark {
+  --obsidian: var(--bg); --black: var(--bg); --charcoal: var(--bg); --espresso: var(--bg-2); --elev: var(--bg-2); --charcoal-2: var(--card);
+  --ivory: var(--fg); --taupe: var(--fg-dim); --text: var(--fg); --text-dim: var(--fg-dim); --text-faint: var(--fg-faint);
+  --copper: var(--accent); --copper-muted: var(--accent-ink); --champagne: var(--accent-ink); --bronze-smoke: var(--line); --steel: var(--fg-dim);
+  --ink-deep: var(--bg); --surface: var(--bg-2); --surface-2: var(--card);
+
+  /* ===== material: soft opaque glass ===== */
+  --glass-blur: blur(18px) saturate(112%);
+  --glass-edge: var(--edge);
+
+  /* ===== elevation: one scale for the whole site ===== */
+  --e1: 0 1px 2px rgba(var(--sh), calc(0.10 * var(--shk))), 0 4px 12px -6px rgba(var(--sh), calc(0.32 * var(--shk)));
+  --e2: 0 12px 32px -12px rgba(var(--sh), calc(0.42 * var(--shk))), 0 2px 6px rgba(var(--sh), calc(0.08 * var(--shk)));
+  --e3: 0 22px 54px -18px rgba(var(--sh), calc(0.52 * var(--shk))), 0 4px 12px rgba(var(--sh), calc(0.08 * var(--shk)));
+  --e4: 0 38px 90px -24px rgba(var(--sh), calc(0.62 * var(--shk))), 0 8px 20px rgba(var(--sh), calc(0.10 * var(--shk)));
+}
+
+:root {
+  /* shared motion tokens (mirrored in src/motion/tokens.ts) */
+  --dur-xs: 140ms; --dur-s: 220ms; --dur-m: 420ms; --dur-l: 720ms; --dur-xl: 1200ms;
+  --ease-out: cubic-bezier(0.22, 0.8, 0.24, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --stagger: 80ms;
+  --intensity: 1;
+
+  /* layout: one container, one spacing scale */
+  --maxw: 1680px;
+  --gutter: clamp(20px, 4.6vw, 88px);
+  --sec-y: clamp(64px, 7.6vw, 124px);
+  --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem; --sp-5: 1.5rem; --sp-6: 2rem; --sp-7: 3rem; --sp-8: 4.5rem;
+  --measure: 60ch;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --header-h: 108px;
+
+  /* type scale */
+  --fs-hero: clamp(2.7rem, 5.4vw, 5.2rem);
+  --fs-h2: clamp(2.1rem, 3.7vw, 3.6rem);
+  --fs-h3: clamp(1.3rem, 1.9vw, 1.75rem);
+  --fs-lede: clamp(1rem, 1.2vw, 1.14rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.72rem;
+}

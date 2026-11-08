@@ -1,0 +1,9 @@
+// node tests/overflow.cjs — whole-page horizontal overflow + off-screen elements at six widths
+const { chromium } = require('playwright');
+(async () => { const b = await chromium.launch(); let bad = 0;
+  for (const [w, h] of [[1920, 1080], [1440, 900], [1280, 800], [1024, 768], [820, 1180], [768, 1024], [430, 932], [390, 844], [375, 812], [360, 740]]) {
+    const p = await b.newPage({ viewport: { width: w, height: h } }); await p.goto('http://127.0.0.1:5180/'); await p.waitForTimeout(1200);
+    await p.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 700) { scrollTo({ top: y, behavior: 'instant' }); await new Promise((r) => setTimeout(r, 60)); } scrollTo({ top: 0, behavior: 'instant' }); });
+    const r = await p.evaluate(() => { const iw = innerWidth; const off = [...document.querySelectorAll('main *')].filter((e) => { const r = e.getBoundingClientRect(); const cs = getComputedStyle(e); if (!r.width || cs.position === 'fixed' || cs.visibility === 'hidden') return false; let a = e.parentElement; while (a && a !== document.body) { const o = getComputedStyle(a).overflowX; if (o === 'hidden' || o === 'clip' || o === 'auto' || o === 'scroll') return false; a = a.parentElement; } return r.right > iw + 1 || r.left < -1; }).slice(0, 4).map((e) => (e.className.baseVal ?? e.className) + '@' + Math.round(e.getBoundingClientRect().right)); return { sw: document.documentElement.scrollWidth, iw, off, small: [...document.querySelectorAll('a,button')].filter((e) => { const r = e.getBoundingClientRect(); return r.width && (r.height < 32 && getComputedStyle(e).display !== 'inline') && !e.closest('.skip'); }).length }; });
+    console.log(w, JSON.stringify(r)); if (r.sw > r.iw || r.off.length) bad++; await p.close(); }
+  await b.close(); console.log(bad ? 'OVERFLOW: FAILED' : 'OVERFLOW: ALL OK'); process.exitCode = bad ? 1 : 0; })();

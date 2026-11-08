@@ -1,0 +1,576 @@
+# MFS MIND-MAP REVEAL ANIMATION ENGINE
+## Cinematic Metals × Quiet Intelligence
+### Hierarchical Flow Reveals for All Ten Automation Services
+
+Build a sophisticated, interactive, mind-map-style animation system for the Murali Forge Systems website.
+
+The animation must behave like a dynamically revealed concept map: a central concept appears, connecting lines draw outward, major branches emerge, sub-branches reveal progressively, and the entire workflow becomes visible as a connected system.
+
+This is NOT a dashboard animation, a vertical timeline, a slideshow of screens, a collection of cards, or a sequence of interface mockups.
+
+The primary visual object is the **expanding, connected mind map itself**.
+
+## 1. VISUAL DIRECTION
+
+Brand: Murali Forge Systems (MFS).
+
+Direction: Cinematic Metals × Quiet Intelligence.
+
+Palette:
+- Background: #171516
+- Dark surface: #282020
+- Primary copper: #D88A61
+- Champagne highlight: #F0D1B9
+- Steel blue: #A7B6C5
+- Light text: #F7F0E9
+
+Preserve the original MFS navy/blue logo without modification.
+
+Create a large, spacious, dark canvas with fine connecting paths, restrained metallic highlights, clearly differentiated nodes, and exceptional readability.
+
+Use copper for primary paths and active branches. Use steel blue for secondary branches. Use champagne to highlight the currently revealed node or active path.
+
+Do not use robot characters, avatars, invented partner logos, or unrelated visual decorations.
+
+## 2. REQUIRED REVEAL SEQUENCE
+
+Every service demo must use this animation model.
+
+### Phase A — Central node
+
+Display only the central topic.
+
+Animate it into view through a refined opacity and scale transition. Add a restrained copper edge highlight.
+
+Example:
+`Lead Capture & CRM Automation`
+
+### Phase B — Primary branches
+
+Draw curved or smoothly routed SVG connector paths from the central node to the first-level branches.
+
+A connector must begin at the parent node and visibly draw toward its child.
+
+Reveal the child node when the connecting line reaches its destination.
+
+Do not reveal all branches simultaneously.
+
+### Phase C — Sub-branches
+
+Reveal the next level of the hierarchy one branch at a time.
+
+For each branch:
+1. Draw its connector.
+2. Illuminate a subtle travelling signal along the path.
+3. Reveal the destination node.
+4. Reveal its label.
+5. Continue into its children.
+
+Allow the animation to pause briefly between meaningful groups so the structure can be understood.
+
+### Phase D — Conditional branches
+
+When a workflow has different possible outcomes, reveal the decision node and then the relevant branches.
+
+Examples:
+- Valid versus invalid data.
+- Available versus unavailable appointment.
+- Standard versus urgent support.
+- Successful processing versus an exception.
+
+In interactive mode, the user must be able to select a scenario and reveal the corresponding branch.
+
+Do not present mutually exclusive results as though all occurred in the same execution.
+
+### Phase E — Complete map
+
+Once the selected flow has finished, show the full connected map.
+
+Provide a clear final state, such as:
+`Workflow completed`
+or
+`Human review required`.
+
+Keep the complete map visible for exploration.
+
+## 3. CAMERA AND SPATIAL MOVEMENT
+
+Treat the mind map as a large visual canvas.
+
+As new branches appear, gently pan or zoom to maintain the active branch in a comfortable viewing area.
+
+Use smooth camera interpolation. Never jump abruptly between branches.
+
+Preserve the relationship between the parent and child nodes while the camera moves.
+
+The complete map should remain navigable after the reveal finishes.
+
+Include:
+- Replay animation.
+- Reset map.
+- Fit entire map to viewport.
+- Zoom in and zoom out.
+- Pan by dragging.
+- Click or tap a node to select it.
+- Keyboard-accessible node navigation.
+- A way to pause or step through the reveal when appropriate.
+
+Avoid zooming so far that labels become unreadable.
+
+Use a full-map view at the end of the reveal.
+
+On mobile, adapt the map to a smaller viewport with appropriate zoom, panning, and node selection.
+
+## 4. NODE DESIGN
+
+Create three visual levels.
+
+**Root node:** The central service or workflow.
+
+Use the strongest visual emphasis, a refined metallic border, and a soft copper highlight.
+
+**Primary branches:** Main workflow phases or functional areas.
+
+Use medium-sized nodes and copper or steel-blue connectors.
+
+**Leaf nodes:** Specific actions, data, rules, or outputs.
+
+Use smaller, low-contrast nodes with readable labels.
+
+Selected nodes should receive a clear active state.
+
+Completed nodes should retain a subtle completed indicator. Error or exception branches must have explicit text labels instead of relying solely on color.
+
+Avoid making every node a separate large card. The connectors and spatial relationships are the main visual language.
+
+## 5. MOTION DETAILS
+
+Use SVG-based connector drawing or an equivalent geometry-aware technique.
+
+Animate actual connector paths, not decorative lines placed independently beside the nodes.
+
+Use:
+- Path drawing with stroke-dasharray and stroke-dashoffset, or an equivalent approach.
+- Restrained node scale and opacity transitions.
+- Subtle signals travelling along active connections.
+- Controlled active-node highlighting.
+- Branch-by-branch stagger.
+- Smooth camera movement.
+- Small changes in material highlight.
+- A clear visual distinction between active, completed, and conditional paths.
+
+The movement must communicate hierarchy and progression.
+
+Do not use excessive bounce, chaotic particle effects, flashing, spinning cards, or random movement.
+
+## 6. INTERACTION AND DATA BEHAVIOR
+
+Represent each workflow as structured data containing nodes, connections, hierarchy, optional conditions, and output details.
+
+The animation engine must reveal this structure progressively.
+
+User input and scenario selection must influence which nodes, values, and branches are displayed.
+
+The visual map must never contradict the underlying simulation.
+
+After completion, selecting a node should display its concise explanation, inputs, outputs, and status in a small contextual detail area.
+
+Do not obscure the map with large panels.
+
+All ten demos must have their own correct workflow structure, while sharing the same map-rendering and animation engine.
+
+## 7. ACCESSIBILITY AND PERFORMANCE
+
+Implement keyboard navigation, focus states, accessible node labels, reduced-motion behavior, and responsive sizing.
+
+Provide a nonanimated way to inspect the complete workflow.
+
+Clean up animation frames, event listeners, and observers.
+
+Avoid excessive DOM nodes and unnecessary full-page re-rendering.
+
+Use a suitable implementation based on the actual project. Prefer React with SVG when the project uses React and SVG meets the requirements. Use a graph or canvas library only if justified.
+
+Preserve the existing website architecture and change only the files necessary to implement this system.
+
+---
+
+# 8. EXACT MIND-MAP STRUCTURES FOR ALL TEN DEMOS
+
+Implement these actual hierarchies. Use the supplied labels rather than inventing new services.
+
+## DEMO 01 — LEAD CAPTURE & CRM AUTOMATION
+
+ROOT:
+Lead Capture & CRM Automation
+
+BRANCH A — Capture
+- Enquiry submitted
+- Required fields checked
+- Input validated
+
+BRANCH B — Qualify
+- Identify requested service
+- Categorize the enquiry
+- Assign review priority
+
+BRANCH C — Organize
+- Create sample lead record
+- Assign lead status
+- Add the next action
+
+BRANCH D — Follow-up
+- Prepare acknowledgement
+- Review follow-up content
+- Mark ready for human review
+
+FINAL OUTPUT:
+Qualified demo lead ready for review
+
+CONDITIONAL BRANCH:
+Invalid input → Show validation error → Correct the source data → Retry.
+
+Sample record:
+DEMO-LEAD-001 · Arjun Rao · Northstar Components · Invoice automation · Qualified · Follow-up draft prepared.
+
+## DEMO 02 — AI AGENTS & CHATBOTS
+
+ROOT:
+AI Agents & Chatbots
+
+BRANCH A — Receive
+- Incoming question
+- Identify user intent
+
+BRANCH B — Retrieve
+- Search approved sample knowledge
+- Identify relevant information
+- Check whether sufficient information exists
+
+BRANCH C — Respond
+- Prepare contextual answer
+- Display the response
+- Ask a follow-up question when needed
+
+BRANCH D — Escalate
+- Identify an unsupported request
+- Flag uncertainty
+- Recommend human review
+
+FINAL OUTPUT:
+Response ready · Human review when required.
+
+SAMPLE QUESTION:
+Can MFS connect a spreadsheet to an invoicing workflow?
+
+SAMPLE RESPONSE:
+Potentially, yes. The current tools and their available integration methods would need to be reviewed first. A suitable workflow could validate spreadsheet data, prepare invoice information, and flag exceptions for review.
+
+CONDITIONAL BRANCH:
+Insufficient information → Explain the limitation → Request missing details or route to a human.
+
+## DEMO 03 — BUSINESS PROCESS AUTOMATION
+
+ROOT:
+Business Process Automation
+
+BRANCH A — Trigger
+- New supplier enquiry
+- Required information received
+
+BRANCH B — Validate
+- Check required fields
+- Check documents
+- Identify missing information
+
+BRANCH C — Decide
+- Required information complete?
+- Yes branch
+- No branch
+
+BRANCH D — Execute
+YES:
+- Categorize supplier
+- Prepare review record
+- Prepare acknowledgement
+
+NO:
+- Identify missing data
+- Prepare document request
+- Mark awaiting information
+
+FINAL OUTPUT:
+Workflow completed or awaiting required information.
+
+## DEMO 04 — MARKETING AUTOMATION
+
+ROOT:
+Marketing Automation
+
+BRANCH A — Trigger
+- Website enquiry received
+- Campaign event selected
+
+BRANCH B — Audience
+- Select enquiry segment
+- Check audience criteria
+- Prepare sample recipient set
+
+BRANCH C — Content
+- Select message template
+- Prepare first message
+- Prepare follow-up messages
+
+BRANCH D — Schedule
+- Set initial contact
+- Set follow-up intervals
+- Preview planned sequence
+
+FINAL OUTPUT:
+Campaign sequence prepared · Not sent.
+
+SAMPLE SEQUENCE:
+- Day 0: Acknowledgement
+- Day 2: Workflow discovery follow-up
+- Day 5: Final follow-up draft
+
+## DEMO 05 — API INTEGRATIONS & DATA AUTOMATION
+
+ROOT:
+API Integrations & Data Automation
+
+BRANCH A — Source
+- Receive sample JSON
+- Inspect field names
+- Read field values
+
+BRANCH B — Map
+- Name → full_name
+- Company → organization
+- Email → email
+- Requested Service → service
+- Team Size → team_size
+
+BRANCH C — Transform
+- Trim whitespace
+- Normalize email casing
+- Convert team size to a number
+- Normalize service category
+
+BRANCH D — Validate
+- Check required fields
+- Check email format
+- Check numeric values
+
+BRANCH E — Output
+- Build destination record
+- Display transformed JSON
+- Show validation status
+
+FINAL OUTPUT:
+
+{
+  "full_name": "Arjun Rao",
+  "organization": "Northstar Components",
+  "email": "arjun@example.com",
+  "service": "invoice_automation",
+  "team_size": 12
+}
+
+CONDITIONAL BRANCH:
+Missing email → Validation failed → Explain the error → Retry after correction.
+
+## DEMO 06 — WHATSAPP BUSINESS AUTOMATION
+
+ROOT:
+WhatsApp Business Automation
+
+BRANCH A — Receive
+- Sample incoming message
+- Identify enquiry category
+
+BRANCH B — Classify
+- Service question
+- Status question
+- Human assistance requested
+
+BRANCH C — Prepare
+- Select approved sample template
+- Populate reply
+- Display message preview
+
+BRANCH D — Route
+- Prepare automated reply
+- Route to human
+- Mark awaiting review
+
+FINAL OUTPUT:
+Reply prepared · Not sent.
+
+CONDITIONAL BRANCH:
+Human assistance requested → Human-review node → Handoff details displayed.
+
+## DEMO 07 — APPOINTMENT & SCHEDULING AUTOMATION
+
+ROOT:
+Appointment & Scheduling Automation
+
+BRANCH A — Request
+- Select date
+- Select meeting duration
+- Choose a sample time slot
+
+BRANCH B — Availability
+- Read sample calendar
+- Evaluate available slots
+- Identify conflicts
+
+BRANCH C — Decision
+- Slot available?
+- Yes branch
+- No branch
+
+BRANCH D — Confirm
+YES:
+- Reserve simulated slot
+- Prepare confirmation
+- Prepare reminder
+
+NO:
+- Identify conflict
+- Display alternate slots
+- Wait for another selection
+
+FINAL OUTPUT:
+Appointment confirmed in demo or alternative slot required.
+
+SAMPLE:
+Tuesday, 3 November 2026 · 11:30 AM–12:00 PM IST.
+
+## DEMO 08 — INVOICE & PAYMENT AUTOMATION
+
+ROOT:
+Invoice & Payment Automation
+
+BRANCH A — Prepare
+- Create sample invoice draft
+- Add line items
+- Set due date
+
+BRANCH B — Calculate
+- Calculate quantities and prices
+- Calculate subtotal
+- Calculate sample GST
+- Calculate final total
+
+BRANCH C — Validate
+- Check line items
+- Check totals
+- Check invoice fields
+
+BRANCH D — Payment Status
+- Awaiting payment
+- Simulate payment received
+- Simulate overdue status
+
+BRANCH E — Follow-up
+PAID:
+- Mark paid in demo
+- Prepare reconciliation summary
+
+OVERDUE:
+- Prepare payment reminder
+- Flag for review
+
+FINAL OUTPUT:
+Accurate invoice preview and simulated payment state.
+
+SAMPLE:
+Subtotal ₹15,750 · Sample GST 18% ₹2,835 · Total ₹18,585.
+
+## DEMO 09 — CUSTOMER SUPPORT & TICKET AUTOMATION
+
+ROOT:
+Customer Support & Ticket Automation
+
+BRANCH A — Receive
+- Sample support request
+- Identify affected process
+
+BRANCH B — Classify
+- Automation failure
+- General request
+- Billing question
+
+BRANCH C — Assess
+- Evaluate impact
+- Assign sample priority
+- Explain the decision
+
+BRANCH D — Route
+- General support review
+- Automation support review
+- Human escalation
+
+FINAL OUTPUT:
+Ticket classified and assigned in the simulation.
+
+SAMPLE URGENT-REVIEW FLOW:
+Reminder workflow failed → Payment follow-up delayed → High-priority demo rule → Automation support review → Human review recommended.
+
+## DEMO 10 — AI CONTENT REPURPOSING
+
+ROOT:
+AI Content Repurposing
+
+BRANCH A — Source
+- Editable source text
+- Identify topic
+- Identify key message
+
+BRANCH B — LinkedIn
+- Main insight
+- Supporting explanation
+- Call to action
+
+BRANCH C — Social Caption
+- Short hook
+- Concise message
+- Closing line
+
+BRANCH D — Email
+- Subject
+- Body
+- Closing
+
+BRANCH E — Short Video Script
+- Opening hook
+- Scene sequence
+- Narration
+- Closing
+
+FINAL OUTPUT:
+Four editable content formats derived from one source.
+
+The output text must be real, selectable, editable, and copyable. The animation reveals the branch structure; it must not replace the content itself.
+
+---
+
+# 9. DEFINITION OF DONE
+
+A demo is complete when:
+- The central node appears first.
+- Its primary connecting paths visibly draw.
+- Branch nodes reveal progressively.
+- Sub-branches unfold in a meaningful order.
+- Camera movement follows the reveal without abrupt jumps.
+- The final connected map is visible.
+- Selecting nodes works.
+- Conditional branches reflect actual simulation state.
+- Reset and replay work.
+- The map remains understandable without animation.
+- All labels and outputs match the actual workflow data.
+
+Implement these ten maps inside the existing MFS website. Do not modify unrelated projects, invent additional services, or replace the map animations with cards or static illustrations.
+
+Verify the real browser behavior before declaring the work complete.

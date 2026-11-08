@@ -1,0 +1,605 @@
+Signature Demo Reveal — Inspired by the “Meet Our Agents” Presentation Pattern
+Create a dedicated, immersive reveal experience for every featured MFS demo, inspired by the presentation pattern of NYX.today's “Meet Our Agents” experience. Use the general concept of distinctive, motion-led introductions, but create original MFS visuals, layouts, copy, and animations rather than copying another website's exact design.
+Each demo must feel like its own digital character or system being introduced to the visitor.
+Presentation sequence:
+
+1. Meet the system: Introduce the demo with a distinctive title, a concise business problem, and an original animated visual.
+2. Reveal the interface: Use coordinated motion to bring the product UI into view. Interface panels, records, controls, and diagrams should assemble naturally.
+3. Watch it work: Play a carefully choreographed demonstration of the actual or simulated workflow, with captions explaining each meaningful step.
+4. Show the outcome: Transition into the final interface or output with a polished, cinematic reveal.
+5. Invite action: Explain what the system helps accomplish and provide a relevant CTA.
+
+Give every demo a distinct visual identity and motion sequence while maintaining the consistent MFS design system of warm ivory, white, navy, and cobalt blue.
+Use full-screen or near-full-screen reveal sections where appropriate, layered compositions, scroll-driven transitions, animated typography, pointer-responsive details, and restrained ambient motion.
+Include working Play, Pause, Replay, and Explore controls. On mobile, adapt the experience to tap interactions and natural scrolling.
+The demos must showcase the product itself through moving interface elements—not merely animate the surrounding page. Make each sequence understandable to nontechnical business owners.
+Clearly label simulated interactions and sample data. Do not imply that external integrations, messages, or business operations are live unless they are actually implemented and verified.
+Build this as a reusable demo-presentation system so future MFS projects can be added with their own title, visual identity, demo sequence, and final outcome.
+
+SIGNATURE ENDING — CINEMATIC AUTOMATION OUTCOME REVEAL
+The final stage of every featured automation demonstration must deliver a visually impressive, cinematic payoff. Do not end the demonstration with a static diagram, a plain success message, or a simple green checkmark.
+Build an original motion sequence that transforms the initial business problem into a clear visual representation of the intended final outcome.
+Animation sequence
+
+1. Resolve the workflow: The final connector draws into place, the last node activates, and the completed workflow becomes visually connected.
+2. Transition the composition: Use a carefully timed camera-like zoom, layered transition, or controlled expansion to move from the workflow diagram into the resulting business interface. Keep this effect lightweight and responsive.
+3. Reveal the output: Show an elegant, believable application interface, dashboard, organized record, notification, report, or completed process that represents what the automation is designed to produce.
+4. Animate the details: Let records populate sequentially, status labels change, progress indicators complete, relevant cards slide into position, and connector lines resolve into a clean final state.
+5. Show the business value: Reveal three concise outcome statements relevant to the demonstration, such as fewer manual steps, better visibility, or more consistent follow-up. Do not invent numerical savings, conversion rates, or performance metrics.
+6. Create the hero moment: Bring the completed workflow and its final output into a balanced composition. Use restrained depth, coordinated motion, and a confident final headline.
+7. End with a clear action: Present a polished CTA such as “Build a workflow like this” or “Discuss your process with MFS”.
+
+Visual effects
+Use purposeful combinations of:
+
+* Scroll-synchronized reveals.
+* SVG path drawing and connector pulses.
+* Layered masks and clip-path transitions.
+* Staggered interface-element entrances.
+* Subtle depth and perspective.
+* Smooth transitions between workflow and output.
+* Animated status indicators and progress feedback.
+* Carefully timed opacity and transform transitions.
+* Restrained ambient background movement.
+* A final composition that settles into a stable, readable state.
+
+Avoid excessive particles, intense flashes, dramatic spinning, constant bouncing, and unnecessary effects that reduce clarity.
+Functional integrity
+The output interface must be an honest demonstration. Use sample data clearly marked as illustrative. Do not simulate a successful external message, booking, payment, database update, or integration as though it actually happened unless the underlying operation is implemented and verified.
+If the demo is illustrative, label it accordingly. The animation must remain informative without requiring the user to scroll at an exact speed.
+Support reduced-motion preferences, keyboard access, mobile interactions, and graceful fallback to a static but complete presentation.
+Quality standard: The final reveal should feel like the culmination of a premium product film: the visitor understands the original problem, watches the system transform the process, sees the resulting output, and immediately understands why the solution is valuable.
+yes in this style , the way of presentaion should be unique with animations and like scrolling animations+revealing by cursor animations +motion animations +background animations and so on like completely better animations that suitedYou are the senior motion-design engineer for Murali Forge Systems (MFS). Implement a unified, production-quality motion system in the existing NEW MFS website project.
+Brand direction: Cinematic Metals × Quiet Intelligence. Preserve the original navy/blue MFS logo and the established palette: #171516, #282020, #D88A61, #F0D1B9, #A7B6C5, #F7F0E9.
+Before editing, inspect the actual project structure, framework, installed animation libraries, components, stylesheets, and current animation behavior. Enhance the existing implementation; do not regenerate the entire website or overwrite working sections.
+Create a coherent motion architecture for:
+
+* Animated backgrounds.
+* Metallic wave animation.
+* Cursor-following light and reveal effects.
+* Rotating geometry.
+* Parallax.
+* Typography reveals.
+* Scroll-triggered animation.
+* Scroll-linked storytelling.
+* Presentation-grade screen choreography.
+* Animated five-stage process visualization.
+* Ten service-demo workflows.
+* Navigation and UI micro-interactions.
+* Section transitions and CTA animations.
+
+Use a shared set of design tokens for duration, easing, stagger, and motion intensity. Separate the animation logic from business and demo logic. Reuse components where appropriate.
+Prefer the animation tools already installed. If additional dependencies are genuinely needed, explain why and use compatible versions. Do not install overlapping libraries without a strong reason.
+Requirements:
+
+1. Every major animation must have a specific visual purpose.
+2. Motion must be real and visible in the browser.
+3. All interfaces must remain usable while animations run.
+4. Support keyboard, touch, and pointer input.
+5. Respect prefers-reduced-motion.
+6. Clean up event listeners, observers, animation frames, and timelines.
+7. Prevent layout shifts and horizontal overflow.
+8. Maintain mobile performance.
+9. Preserve all existing MFS content and functionality.
+
+First audit the existing motion implementation, identify gaps, then build the shared motion system. Verify it in the browser when browser access is available. Report the exact files changed and the tests actually completed.
+Build the signature animated metallic wave for Murali Forge Systems (MFS). This is the brand's primary motion artwork.
+Maintain Cinematic Metals × Quiet Intelligence and the exact palette: #171516, #282020, #D88A61, #F0D1B9, #A7B6C5, #F7F0E9. Preserve the original navy/blue logo.
+ART DIRECTION:
+Create multiple long, organic, sculptural ribbons resembling brushed metallic silk. Use burnished copper, champagne highlights, and cool steel-blue reflections against a deep charcoal environment. The composition must feel tactile, cinematic, sophisticated, and dimensional.
+REQUIRED MOTION:
+
+* A broad copper ribbon follows a flowing path.
+* A steel-blue ribbon moves independently at a different speed and direction.
+* Secondary layers create overlapping depth.
+* A restrained champagne highlight travels across selected surfaces.
+* Ambient lighting evolves gradually.
+* Small changes in position, curvature, rotation, and scale create organic movement.
+* The animation loops without a visible snap or reset.
+* Optional pointer-based depth response is subtle and smoothly damped.
+
+IMPLEMENTATION:
+Inspect the existing hero and extend its actual implementation rather than replacing the website. Prefer custom SVG paths, gradients, masks, and transforms. Use Canvas or another rendering technique only where it improves the result.
+The artwork must be responsive and must not cause horizontal overflow. Keep the headline, navigation, and CTA readable above or beside the artwork. Decorative layers must not intercept interactions.
+Do not use topographic contour lines, a static wave photograph, a generic gradient blob, a glowing orb, or an unrelated 3D illustration as a substitute.
+Respect reduced-motion preferences with a beautiful static composition. Test the real wave in the running website and confirm that its separate layers visibly move. A rendered reference image is not sufficient.Implement a premium cursor-following lighting interaction for the MFS website.
+The aesthetic is Cinematic Metals × Quiet Intelligence. Use a controlled copper/champagne light with subtle steel-blue contrast against charcoal #171516 and #282020, using the existing MFS palette. Preserve the original logo.
+BEHAVIOR:
+
+* On selected dark sections, a soft, diffuse light follows the pointer.
+* The light moves using smooth interpolation rather than jumping directly to the pointer.
+* The intensity increases slightly over designated metallic artwork or interactive visualizations.
+* The light fades naturally when the pointer leaves the relevant region.
+* Selected sections may use a restrained secondary reflection.
+* The effect must not obscure text, reduce contrast, or compete with the main metallic wave.
+
+TECHNICAL REQUIREMENTS:
+Use pointer events and requestAnimationFrame or an appropriate lightweight technique. Avoid updating React state on every pointer movement if doing so would cause excessive rendering. Keep the effect in a dedicated reusable component or hook.
+Apply it selectively, not across every section. Do not replace the normal cursor or change the behavior of buttons, links, text selection, and form controls.
+On touchscreens, disable cursor-following behavior and preserve the normal interaction. On reduced-motion settings, disable or simplify the effect.
+Integrate the implementation into the existing project, verify that the light follows smoothly, and confirm that it does not block clicks or cause performance issues.Implement a sophisticated cursor-reveal animation for the MFS website.
+Create a visual effect where the pointer reveals a second visual layer through a smoothly moving mask. The effect should feel like revealing a sharper metallic material beneath a softly lit surface—not a video-game spotlight.
+BRAND:
+Cinematic Metals × Quiet Intelligence. Use copper #D88A61, champagne #F0D1B9, steel blue #A7B6C5, dark charcoal #171516, and the existing MFS design tokens. Preserve the original logo.
+VISUAL BEHAVIOR:
+
+* Begin with a complete, attractive base composition.
+* Move the pointer across the selected visual.
+* Reveal the alternate material or highlight inside a soft-edged mask centered near the pointer.
+* Smoothly interpolate the mask position.
+* Fade or blend the revealed material naturally.
+* Return to the resting composition when the pointer leaves.
+* Ensure the reveal remains visually correct around the edges of the element.
+
+Apply the effect to one or two carefully selected metallic artwork areas, not every image.
+Use an appropriate SVG mask, CSS mask, clip-path, or layered-image technique. Prefer efficient updates and avoid flicker, abrupt jumps, or heavy full-screen rendering.
+ACCESSIBILITY:
+Provide equivalent information when users navigate by keyboard or touch. A tapped or focused visual may activate a persistent alternate state, with a way to return to the original state. Do not make important text visible only through the pointer.
+Integrate this into the existing code and test pointer movement, element boundaries, mobile behavior, and reduced motion. Do not represent an ordinary hover opacity change as a completed cursor-reveal effect.Create a deliberate rotation and orbital-motion system for selected MFS visual elements.
+The design must follow Cinematic Metals × Quiet Intelligence and use the established charcoal, copper, champagne, and steel-blue palette. Preserve the original MFS logo.
+Build a restrained family of geometric elements:
+
+* Thin metallic arcs.
+* Fine circular rings.
+* Selected elliptical paths.
+* Small technical markers.
+* Optional rotating highlight segments.
+
+MOTION:
+
+* Use two or three layers at different speeds and directions.
+* Create slow orbiting motion around a relevant visual centerpiece.
+* Use smooth, consistent rotation without sudden speed changes.
+* Add subtle depth by separating foreground and background elements.
+* If the hero contains orbiting elements, keep them behind or around the metallic wave without competing with it.
+* Introduce restrained pointer-driven tilt only on selected decorative elements.
+
+DO NOT:
+Create a generic circular HUD, spin every card, rotate essential text, or turn the site into a futuristic control panel. Avoid excessive rings and rapid rotation.
+PLACEMENT:
+Use orbital elements only in the hero or selected workflow and integration visuals when they add depth or explain connectivity. Do not repeat the same motif in every section.
+TECHNICAL:
+Use CSS transforms or SVG transforms where suitable. Separate continuous decorative motion from interactive state. Stop or simplify unnecessary animation when elements are not visible. Respect reduced motion and responsive layouts.
+Implement the actual animation in the existing website and verify that the elements rotate smoothly without causing layout shifts or blocking interactions.Implement refined, multi-layer parallax for the MFS website.
+Use Cinematic Metals × Quiet Intelligence. Preserve the exact brand palette and original logo.
+The purpose is to create subtle depth between background atmosphere, metallic artwork, decorative geometry, interface panels, and foreground content.
+BUILD:
+
+* A slowly moving background atmosphere.
+* A separate metallic-wave layer.
+* One or two secondary depth layers.
+* Carefully selected foreground accents.
+* Optional restrained pointer-based parallax in the hero.
+
+SCROLL BEHAVIOR:
+As the visitor scrolls, the layers move at slightly different rates. Major elements should feel anchored within the composition. The effect must support the story of each section rather than making the page feel unstable.
+INTERACTION:
+Where pointer parallax is used, smooth the movement and return the layers to their natural positions when the pointer exits. Do not tilt entire sections or make controls drift away from their hit targets.
+IMPLEMENTATION:
+Use CSS transforms, scroll progress, or a suitable installed motion library. Use one shared motion controller where practical rather than adding separate costly scroll listeners to every element.
+Keep the movement restrained. Avoid aggressive parallax, horizontal overflow, blurry content, excessive repaints, or layout recalculation.
+For mobile and reduced-motion preferences, simplify the effect while keeping the page visually complete.
+Integrate and test the actual parallax in the running website. Verify desktop and mobile behavior and ensure all content remains readable and clickable.Implement a premium typography and entrance-animation system for the MFS website.
+BRAND:
+Cinematic Metals × Quiet Intelligence. Preserve the original MFS navy/blue logo and the established palette.
+HERO SEQUENCE:
+
+1. The atmospheric background appears.
+2. The metallic wave is visible and begins its movement.
+3. Navigation enters cleanly.
+4. The eyebrow reveals.
+5. The headline appears through a refined line-based reveal.
+6. Supporting copy follows with a restrained stagger.
+7. Primary and secondary CTA elements settle into place.
+8. The remaining decorative details complete the composition.
+
+TYPOGRAPHY EFFECTS:
+Use line clipping, subtle vertical translation, controlled opacity, and carefully timed staggering. A slight blur-to-sharp transition may be used selectively if rendering remains crisp.
+SECTION HEADINGS:
+Use a consistent but adaptable reveal system. Different section types may use a line reveal, subtle upward movement, or mask reveal, according to the content.
+STRICT RULES:
+
+* Do not animate every character individually.
+* Do not make text invisible indefinitely while JavaScript loads.
+* Do not delay the ability to use navigation and calls to action.
+* Prevent layout shift.
+* Preserve readable semantic text and screen-reader accessibility.
+* Avoid dramatic bouncing or exaggerated easing.
+
+Create reusable animation utilities, but allow different timing for the hero, service headings, and editorial sections. Respect reduced motion with a clean nonanimated presentation.
+Implement the animation in actual components and verify that text stays readable during initial load, page refresh, resizing, and reduced-motion use.Implement a cohesive scroll-triggered reveal system for the MFS website.
+Follow Cinematic Metals × Quiet Intelligence and preserve the existing MFS brand identity.
+As visitors scroll through the page, use intentional animation for:
+
+* Section headlines.
+* Supporting copy.
+* Service entries.
+* Metallic visual details.
+* Interactive demo panels.
+* Process stages.
+* Selected diagrams.
+* Contact content.
+
+ANIMATION TYPES:
+
+* Line-based headline reveals.
+* Subtle upward and opacity transitions.
+* Controlled stagger for closely related elements.
+* Mask reveals for selected visuals.
+* Small transitions in borders, highlights, and interface states.
+* Drawing of selected decorative lines.
+
+Do not apply the same animation mechanically to every element. Establish visual rhythm: some sections should enter quietly, while important sections receive more deliberate choreography.
+TECHNICAL IMPLEMENTATION:
+Use IntersectionObserver or an already-installed compatible motion library. Trigger animations reliably when elements enter view, avoid unnecessary repeated animations, and prevent hidden content from remaining inaccessible if JavaScript fails.
+Clean up observers and triggers. Account for viewport changes and mobile layouts.
+IMPORTANT:
+This prompt covers entrance animations triggered by scroll. It does not replace the separate scroll-linked scrollytelling and pinned presentation requirement.
+Respect prefers-reduced-motion. Verify that reveals trigger correctly in the browser and do not cause content jumps, broken layouts, or horizontal overflow.Build a presentation-grade scroll-linked storytelling system for Murali Forge Systems.
+Use Cinematic Metals × Quiet Intelligence, the established MFS color palette, and the original logo.
+This must be a real scroll-progress-driven experience, not ordinary fade-in effects.
+Create at least one major scrollytelling section. Prefer the five-stage MFS implementation workflow or a carefully selected service presentation.
+REQUIRED BEHAVIOR:
+
+* The section enters a carefully controlled presentation state.
+* A visual or interface remains composed while the narrative progresses.
+* Scrolling advances through distinct stages.
+* Connections draw and active nodes illuminate.
+* Supporting copy updates to match the active stage.
+* Interface panels or diagrams transition between meaningful states.
+* Scroll progress and visual progress remain synchronized.
+* Scrolling backward reverses or updates the sequence correctly.
+* The section releases naturally when the presentation ends.
+
+A fine copper line may draw across the composition while the active visual progresses through the stages. Steel-blue highlights may indicate connected systems. Use restrained metallic lighting.
+INTERACTION:
+Allow visitors to click or focus on an individual stage. Manual selection must update the visual state and pause or appropriately coordinate automatic scroll-driven changes.
+Do not hijack scrolling, prevent visitors from leaving the section, or create unnecessarily long pinned sequences.
+On mobile, use a simpler sequential layout if a pinned presentation causes usability or performance problems.
+Implement using the project's existing animation system or a compatible scroll-animation library. Measure progress accurately, refresh triggers after layout changes, and clean up all resources.
+Test forward scroll, backward scroll, resizing, mobile behavior, and reduced motion. Do not claim the experience works unless verified.Build premium, presentation-grade animated interface scenes for selected MFS service sections.
+The scenes must look like carefully art-directed product demonstrations. They must be composed from real HTML, CSS, SVG, or application components wherever practical—not flattened screenshots of entire interfaces.
+BRAND:
+Cinematic Metals × Quiet Intelligence. Use the existing MFS palette and preserve the original logo.
+SCENE SEQUENCE:
+
+1. An application frame enters through a controlled mask or clip reveal.
+2. The main interface panel settles.
+3. Supporting panels appear with restrained stagger.
+4. Fine connector lines draw into place.
+5. Selected fields, rows, nodes, or status elements animate.
+6. A meaningful workflow state changes.
+7. The final state remains visible for inspection and interaction.
+
+SCREEN MOVEMENT:
+Use subtle depth, controlled panel translation, restrained perspective, fine copper edge reflections, and steel-blue highlights. The composition should feel dimensional without making the interface hard to read.
+STATE-BASED CONTENT:
+A lead record can populate. A workflow node can activate. A data field can move between panels. An invoice total can update. A support ticket can be classified. Content output panels can appear.
+Every movement must represent a real change in the simulation state.
+SCROLL INTEGRATION:
+Selected scenes may progress through stages as the user scrolls, provided normal navigation remains available. Include manual controls where they improve usability.
+Do not create fake customers, invented platform logos, fictional testimonials, or unrelated dashboard content.
+Ensure screen text is readable and responsive. On mobile, convert multi-panel compositions into an intentional stacked sequence.
+Implement and verify each scene within the actual MFS website.Implement the signature animated MFS process visualization for these five stages:
+01 Discover → 02 Design → 03 Build → 04 Test → 05 Improve.
+This is a mandatory, interactive workflow—not a static timeline or a diagram with simple entrance effects.
+BRAND:
+Cinematic Metals × Quiet Intelligence. Use copper #D88A61, champagne #F0D1B9, steel blue #A7B6C5, and the established MFS background and text colors. Preserve the original logo.
+ANIMATION SEQUENCE:
+
+1. The workflow appears in its initial state.
+2. A thin copper line draws towards Discover.
+3. The Discover node activates with a restrained metallic pulse.
+4. A moving highlight travels to Design.
+5. Design activates and its description appears.
+6. The sequence continues through Build, Test, and Improve.
+7. Each stage reveals its own concise explanation and supporting mini-visual.
+8. The final node activates and the connected workflow reaches completion.
+9. The sequence loops seamlessly or waits for an intentional replay.
+
+INTERACTION:
+Users can select any of the five stages. The chosen node, connecting path, heading, description, and support visual must update together. Manual selection must pause or appropriately coordinate automatic playback.
+Use subtle line drawing, moving signals, carefully timed highlights, and a well-composed responsive layout.
+MOBILE:
+Use a clear vertical or stacked progression with the same information and interactions.
+ACCESSIBILITY:
+All stage descriptions must remain available without motion. Provide keyboard-operable selection, visible focus, reduced-motion behavior, and accessible names.
+Do not use random floating icons. Do not use a fake dashboard screenshot. Build the actual diagram and animation logic.
+Integrate this section into the existing site and verify all five stages, selection, replay, resizing, and reduced-motion behavior.Implement a premium micro-interaction system for the MFS website.
+Design direction: Cinematic Metals × Quiet Intelligence. Preserve the original logo, established palette, typography, and layout.
+Create consistent interaction states for:
+
+* Primary and secondary buttons.
+* Navigation links.
+* Service entries.
+* Tabs and segmented controls.
+* Form fields.
+* Demo Run, Replay, Reset, and Copy buttons.
+* Workflow nodes.
+* FAQ rows.
+* Dialogs and notifications.
+* Contact form submission.
+
+BUTTONS:
+Use subtle surface transitions, fine copper or steel-blue highlights, gentle press feedback, and clear keyboard focus. Optional magnetic movement may be used on selected desktop-only CTAs, but never make the button difficult to target.
+SERVICE INTERACTIONS:
+Use restrained elevation, line reveals, icon movement, or small material highlights. Reveal useful information rather than purely decorative motion.
+FORM INTERACTIONS:
+Animate focus and validation states gently. Provide clear error messages and do not rely on color alone.
+WORKFLOW INTERACTIONS:
+Selecting a node should update the active state, relevant explanation, and supporting visual as one coherent transition.
+COPY AND RESET:
+Provide clear visual feedback when an action succeeds or fails. Do not show a successful copy state before confirming that the copy operation worked.
+Avoid excessive bouncing, rapid flashing, aggressive scale changes, and repeated glow effects.
+Ensure hover behaviors have keyboard-focus and touch equivalents. Use accessible labels and preserve normal control behavior.
+Implement shared interaction components or styles rather than inconsistent one-off effects. Test focus, hover, pressed, disabled, loading, success, and error states in the actual website.Create a refined navigation and transition system for the MFS website.
+Maintain Cinematic Metals × Quiet Intelligence. Preserve the original navy/blue logo and exact MFS palette.
+NAVIGATION:
+
+* Add subtle entrance choreography on initial load.
+* Use refined hover and active states.
+* Allow a restrained background or border transition as the user scrolls.
+* Ensure the logo links to the page top.
+* Make all navigation destinations work.
+* Build a responsive mobile menu with a polished opening and closing motion.
+* Support Escape-key closing and appropriate focus behavior.
+* Close the menu after navigation when appropriate.
+
+SECTION TRANSITIONS:
+Use restrained changes in background tone, section masks, fine copper line drawing, or selected metallic details to create a coherent rhythm.
+Transitions must connect the content rather than turn every section boundary into a dramatic visual effect.
+PAGE MOVEMENT:
+Use appropriate anchor navigation and consistent smooth scrolling when supported by the user's motion preferences. Never disable normal browser navigation or keyboard accessibility.
+Avoid page transitions that obscure content, delay interactions, or cause layout shifts. Do not invent routes to pages that do not exist.
+On mobile and reduced-motion settings, simplify transitions while retaining the same content and navigation.
+Implement changes in the existing project. Verify menu behavior, navigation destinations, focus, resizing, browser history where relevant, and reduced-motion behavior.Polish the final contact CTA and footer of the MFS website with a restrained, cinematic motion sequence.
+Maintain Cinematic Metals × Quiet Intelligence. Use the existing brand palette and preserve the original logo.
+FINAL CTA:
+
+* Establish a calm, dark composition with generous negative space.
+* Introduce a small copper-and-steel metallic detail or flowing ribbon.
+* Animate the supporting highlight gradually.
+* Reveal the heading with a refined line-based entrance.
+* Bring in supporting copy and the primary contact action with restrained stagger.
+* Allow the artwork to react subtly to scrolling where appropriate.
+* Keep the CTA clear and easy to use.
+
+CONTACT FORM:
+
+* Animate focus and validation states carefully.
+* Show genuine loading feedback during submission.
+* Display success only after the configured submission actually succeeds.
+* Display a useful error state if submission fails.
+* Preserve entered information when appropriate so users do not lose their work.
+* Keep the form usable when the backend is disconnected.
+
+FOOTER:
+
+* Transition naturally into a quiet dark material surface.
+* Use the original MFS logo.
+* Include actual navigation and configured contact links only.
+* Animate a fine divider or selected detail if it enhances the composition.
+* Avoid oversized decorative motion or a dramatic animation that delays footer navigation.
+
+Do not fabricate contact information, customers, social accounts, or successful submissions.
+All content must remain readable and accessible. Use reduced-motion alternatives, responsive layouts, and a restrained motion hierarchy.
+Implement these effects in the existing website. Test valid submissions, invalid fields, unavailable backend behavior, keyboard access, and footer navigation.Perform a thorough motion-quality audit of the MFS website. This is an implementation and repair task, not just a written review.
+Maintain Cinematic Metals × Quiet Intelligence, the exact established palette, and the original navy/blue logo.
+AUDIT THESE SYSTEMS:
+
+1. Animated backgrounds.
+2. Metallic wave ribbons.
+3. Cursor-following light.
+4. Cursor-reveal masks.
+5. Rotating geometry.
+6. Parallax.
+7. Typography entrances.
+8. Scroll reveals.
+9. Scroll-linked and pinned presentations.
+10. Animated screen scenes.
+11. Five-stage workflow.
+12. All ten service-demo workflows.
+13. UI micro-interactions.
+14. Navigation and section transitions.
+15. Contact CTA and form behavior.
+
+ACCESSIBILITY:
+Respect prefers-reduced-motion. Simplify ambient backgrounds, rotation, parallax, scroll-linked transitions, and entrance effects as appropriate. Preserve all content and interactive functionality.
+PERFORMANCE:
+
+* Avoid unnecessary continuous rendering.
+* Avoid causing full application re-renders on every pointer movement.
+* Use transform and opacity animation where appropriate.
+* Clean up observers, event listeners, requestAnimationFrame loops, timers, and animation timelines.
+* Avoid layout shifts.
+* Prevent horizontal overflow.
+* Simplify heavy effects on mobile.
+* Ensure decorative layers do not intercept interaction.
+* Do not introduce animation-related console errors.
+
+FUNCTIONAL TESTS:
+
+* Verify the wave visibly moves.
+* Verify cursor effects where supported.
+* Verify scroll animations in both directions.
+* Verify rotating elements.
+* Verify the five stages of the MFS process.
+* Run every service demo with sample input.
+* Check replay and reset.
+* Check invalid and alternate states where implemented.
+* Check mobile touch behavior.
+* Check reduced-motion mode.
+* Check navigation and contact form behavior.
+
+Repair actual problems found. Do not hide errors by disabling the Vite overlay or suppressing console warnings. Do not claim success for anything that has not been tested.
+Provide a final report listing each animation system, whether it works, the files changed, tests run, results, and any remaining limitations.Implement a fully animated, interactive Lead Capture & CRM Automation demonstration for the MFS website.
+Show the complete lifecycle of a sample enquiry through an elegant, connected workflow.
+ANIMATION:
+
+1. A lead enters through an editable sample form.
+2. Required fields are validated.
+3. A classification node activates.
+4. A visible signal travels along the connector.
+5. A lead record populates inside a structured interface.
+6. A follow-up action appears.
+7. The final status updates.
+
+INTERACTIONS:
+Allow the visitor to change the sample data, run the process, inspect the active stage, replay the animation, and reset the demonstration.
+VISUAL STYLE:
+Use precise paths, clean data fields, restrained copper highlights, steel-blue secondary accents, and subtle interface transitions. Preserve MFS Cinematic Metals × Quiet Intelligence.
+The output must depend on the entered sample data. Do not use fake customer portraits, invented CRM logos, or a static screenshot as the entire demo.
+Keep the simulation local unless an authorized live integration is configured. Clearly label the simulated record and follow-up.
+Implement and test the complete animation and controls in the real website.Implement a fully animated AI Agents & Chatbots service demonstration for MFS.
+Create a refined conversational interface connected to a visible workflow diagram. Do not use a robot mascot, humanoid face, or fabricated customer avatar.
+ANIMATION:
+
+1. A sample user question enters the conversation.
+2. A request-classification step activates.
+3. A simulated approved-knowledge lookup occurs.
+4. A response is prepared.
+5. The response appears progressively or through a carefully timed reveal.
+6. If the scenario requires human attention, the handoff branch activates.
+7. The final conversation state is displayed.
+
+INTERACTION:
+Allow sample questions or a simple input field. Support submitting a question, viewing the output, resetting, and selecting a scenario that demonstrates human escalation.
+Show workflow progression with connected nodes and restrained metallic highlights. Keep the conversation readable and accessible.
+If no genuine AI backend is configured, use an honest, deterministic sample response engine. Do not pretend that a live AI API has been called.
+Maintain the MFS palette and implement the real animation logic, not a static chatbot mockup.Build the animated Business Process Automation demonstration for the MFS website.
+Represent a configurable process using clearly connected workflow nodes, meaningful branches, and a visible execution state.
+ANIMATION:
+Trigger → processing step → decision → conditional branch → action → completion or failure.
+As the simulation runs:
+
+* Draw connector paths.
+* Highlight the currently active node.
+* Move a copper signal along the active path.
+* Update each node's status.
+* Animate the selected branch.
+* Show the final output and execution status.
+
+INTERACTION:
+Let visitors choose from predefined workflow scenarios, run the simulation, inspect its progress, replay, and reset it.
+The simulation must contain working state transitions. It must not be an animation that always plays the same sequence regardless of user input.
+Use a restrained engineering aesthetic with copper and steel-blue highlights against the established MFS visual system. Include accessible status text and a reduced-motion alternative.
+Do not connect to external systems unless a genuine, authorized integration has been configured. Implement and verify this demo within the actual website.Implement an animated Marketing Automation demonstration for MFS.
+The demo should explain the movement from a selected trigger to an audience, a prepared message, and a scheduled campaign state.
+ANIMATION:
+
+1. A sample trigger activates.
+2. The audience segment becomes highlighted.
+3. A selected message template enters the preview.
+4. A schedule step activates.
+5. The simulated campaign state updates.
+6. The workflow displays its final status.
+
+INTERACTION:
+Allow visitors to choose a sample audience, select a message template, and run or reset the simulation. The visual flow and output must reflect the selected inputs.
+Use clean audience groups, fine connector lines, structured message previews, and subtle copper highlights. Avoid stock promotional photographs, fake company logos, and exaggerated social-media icons.
+No actual campaign or message may be sent. Label the output as a simulation unless a genuine, authorized integration exists.
+Implement proper loading, completion, and error states where needed. Maintain the MFS palette and verify the actual input-to-output behavior.Build an animated API Integrations & Data Automation demonstration for MFS.
+Create two abstract software panels connected by a visible data path. Do not display invented software-company logos.
+ANIMATION:
+
+1. Source fields become visible.
+2. A data signal travels from the source panel.
+3. Selected fields map to destination fields.
+4. A transformation step activates.
+5. Validation identifies valid or missing information.
+6. The output panel populates with the transformed record.
+7. The final synchronization status appears in the simulation.
+
+INTERACTION:
+Let visitors edit sample data, change field mappings, and execute the workflow. Display validation messages and update the transformed output according to the choices.
+Use precise connector paths, fine grid details, restrained copper highlights, and steel-blue signals. The animation must show actual state changes, not merely a glowing line.
+Do not expose credentials or claim to synchronize a live external system. Clearly label simulated records. Respect reduced motion and mobile layouts.
+Implement, run, and verify the complete workflow.Implement an animated WhatsApp Business Automation demonstration that shows a sample business-message workflow.
+Use a restrained messaging interface with an animated routing diagram. Preserve the MFS brand identity. Do not invent a live WhatsApp connection.
+ANIMATION:
+
+1. A simulated incoming message appears.
+2. The message category activates.
+3. A suitable sample template is selected.
+4. The message preview appears.
+5. The next-action path illuminates.
+6. The simulation routes the message to an automated response or a human handoff.
+7. The final state becomes visible.
+
+INTERACTION:
+Allow the visitor to select message scenarios or edit sample text. Run the workflow, inspect the current stage, replay it, and reset it.
+Use subtle message transitions, connected paths, and copper/steel-blue state indicators. Keep text readable and avoid unnecessary bouncing message bubbles.
+Clearly disclose that the flow is simulated. Never send a real message without a configured, authorized integration.
+Implement real state transitions, keyboard-accessible controls, and a reduced-motion alternative. Verify the result in the actual website.Implement an animated Appointment & Scheduling Automation demonstration for MFS.
+Create a clean, interactive calendar and a visible workflow explaining how a booking is processed.
+ANIMATION:
+
+1. A booking request enters.
+2. Availability is checked.
+3. Available slots become visually distinguishable.
+4. The visitor's selected slot is highlighted.
+5. A conflict check runs.
+6. The simulated booking confirmation appears.
+7. A reminder-preparation stage activates.
+
+INTERACTION:
+Allow selection of sample dates and available times. Update the slots based on the current simulated bookings. Prevent double booking. Provide run, confirmation, and reset controls.
+Use an elegant calendar interface, precise state changes, fine copper highlights, and restrained steel-blue accents. Avoid excessive movement of calendar elements or unreadable tiny labels.
+No actual calendar event or reminder should be created or sent unless the appropriate authorized integration is configured.
+Implement real scheduling logic for the local simulation, with clear unavailable and error states. Preserve usability on mobile and with reduced motion. Verify booking conflicts and state changes.Build an animated Invoice & Payment Automation demonstration for the MFS website.
+Create a polished sample invoice interface with editable line items, quantities, unit prices, totals, due dates, and payment-status indicators.
+ANIMATION:
+
+1. The invoice draft appears.
+2. Line items populate.
+3. The total is calculated.
+4. The invoice enters a simulated issued state.
+5. Payment status changes when the visitor chooses a sample scenario.
+6. The correct reminder or reconciliation branch activates.
+7. The final status is displayed.
+
+INTERACTION:
+Let visitors modify quantities and unit prices and recalculate the total accurately. Allow a simulated status change and replay/reset the workflow.
+Use refined typography, precise tables, fine borders, restrained copper emphasis, and clear financial formatting. Do not make all rows slide around unnecessarily.
+Clearly indicate that invoice and payment actions are simulated. Never process actual payments or claim to update an external accounting system without a genuine authorized integration.
+Implement functional calculations and animation states. Verify totals, status changes, responsive layout, and error handling.Implement an animated Customer Support & Ticket Automation demonstration for MFS.
+Create a clean support-request interface connected to a visible classification and routing workflow.
+ANIMATION:
+
+1. A sample ticket enters.
+2. Its request category becomes visible.
+3. A priority-assignment node activates.
+4. The ticket moves visually to the appropriate queue.
+5. The workflow determines whether escalation is necessary.
+6. The urgent branch receives a clear visual emphasis when applicable.
+7. The final assignment or escalation status appears.
+
+INTERACTION:
+Allow visitors to select different sample scenarios, including normal and urgent requests. The priority, route, explanation, and final state must reflect the chosen scenario.
+Use structured interface panels, restrained copper highlights, precise connector lines, and clear status labels. Avoid fake support-team portraits and invented company logos.
+Make the simulation's rules understandable. Include replay and reset controls, keyboard access, mobile responsiveness, and reduced-motion behavior.
+Do not claim that a real ticket was created or routed to an external service. Implement and test the entire local workflow.Build an animated AI Content Repurposing demonstration for the MFS website.
+The visitor must see one source text transform into several useful content formats. The outputs must be real, editable text—not just decorative cards.
+ANIMATION:
+
+1. The source text appears in the input panel.
+2. The processing state begins.
+3. A visual branching path draws from the source.
+4. Output panels appear sequentially.
+5. Each output is populated with its generated or simulated text.
+6. The completed outputs become selectable and editable.
+7. Copy controls become available.
+
+OUTPUT FORMATS:
+
+* LinkedIn post.
+* Short social caption.
+* Email draft.
+* Short video script.
+
+INTERACTION:
+Allow the visitor to edit the source text, select output formats, run the transformation, inspect results, edit the generated copy, copy an individual output, and reset the demonstration.
+Use restrained line drawing, copper highlights, steel-blue branches, and clean typography. Avoid generic AI artwork, robot imagery, or excessive animation of every character.
+If a secured AI backend is configured, use it appropriately. Otherwise, provide useful deterministic sample behavior and identify it honestly as a demo.
+Verify that the outputs respond to input, copy actions work, and all controls remain accessible.
+AND MIX THE LOGO WITH BACKGROUND AND ALSO THESE ARE MY ACTUAL ANIMATIONS

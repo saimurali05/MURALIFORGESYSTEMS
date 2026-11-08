@@ -1,0 +1,104 @@
+/* ===== MFS glass v3 — soft opaque glass on Ivory Graphite =====
+   Loaded last. Principles:
+   • solid ivory / cream / sand / graphite / charcoal surfaces carry the page; glass is used selectively
+   • a pane is 88–96% opaque: a creamy (light) or graphite (dark) gradient, 14–22px blur behind it, a fine light edge,
+     an inner top highlight and a diffused, warm shadow — substantial and smooth, never a transparent overlay
+   • the edge picks up a faint champagne sheen that follows the pointer (src/motion/glassLight.ts sets --mx/--my/--lit)
+   • one elevation scale (--e1…--e4 in tokens.css); tiers: .glass (panel) · --raised · --float (header/dock/menus) · --inset · --lite
+*/
+@property --lit { syntax: '<number>'; inherits: false; initial-value: 0; }
+
+:root, .th-light {
+  --gl-a: rgba(249, 246, 239, 0.96); --gl-b: rgba(232, 225, 214, 0.91);
+  --gl-edge: rgba(255, 255, 255, 0.78); --gl-hi: rgba(255, 255, 255, 0.88); --gl-low: rgba(52, 58, 58, 0.06);
+  --gl-well: rgba(52, 58, 58, 0.06);
+  --gl-card-a: rgba(249, 246, 239, 0.98); --gl-card-b: rgba(242, 237, 227, 0.94);
+}
+.th-dark {
+  --gl-a: rgba(52, 58, 58, 0.96); --gl-b: rgba(23, 25, 24, 0.94);
+  --gl-edge: rgba(249, 246, 239, 0.15); --gl-hi: rgba(249, 246, 239, 0.1); --gl-low: rgba(0, 0, 0, 0.35);
+  --gl-well: rgba(0, 0, 0, 0.28);
+  --gl-card-a: rgba(46, 52, 51, 0.96); --gl-card-b: rgba(30, 33, 32, 0.95);
+}
+
+html { background: var(--bg); }
+body { background: var(--bg); position: relative; }
+
+/* ---------- restrained light: a single soft pool behind the things that matter (never a glow) ---------- */
+.lamp {
+  position: absolute; z-index: -1; pointer-events: none; border-radius: 50%; opacity: 0.55;
+  left: var(--lamp-x, 50%); top: var(--lamp-y, 50%); width: var(--lamp-w, 50vw); height: var(--lamp-h, 34vw); transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(var(--lamp-c, var(--acc)), calc(var(--lamp-a, 0.15) * 0.8)), rgba(var(--lamp-c, var(--acc)), calc(var(--lamp-a, 0.15) * 0.28)) 52%, transparent 100%);
+}
+.th-light .lamp { opacity: 0.4; }
+.has-lamps { position: relative; isolation: isolate; }
+
+/* ---------- the pane ---------- */
+.glass,
+.demo__panel, .demo__meet, .oc, .demo__headline, .demo__invite, .mm-vp, .demo__idle {
+  --g-r: 20px; --g-bw: 0px;
+  position: relative; isolation: isolate; border-radius: var(--g-r);
+  background: linear-gradient(145deg, var(--gl-a), var(--gl-b));
+  -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
+  box-shadow: inset 0 1px 0 var(--gl-hi), inset 0 -1px 0 var(--gl-low), var(--e2);
+  transition: --lit 0.55s var(--ease-out), box-shadow var(--dur-m) var(--ease-out), transform var(--dur-m) var(--ease-out), border-color var(--dur-m);
+}
+/* legacy panels keep their own 1px border; the sheen sits exactly over it */
+.demo__panel, .demo__meet, .oc, .demo__headline, .demo__invite, .mm-vp, .demo__idle { --g-bw: 1px; border: 1px solid var(--gl-edge); }
+.glass { border: 1px solid var(--gl-edge); }
+
+.glass::before,
+.demo__panel::before, .demo__meet::before, .oc::before::before, .demo__headline::before, .demo__invite::before, .mm-vp::before, .demo__idle::before {
+  content: ''; position: absolute; inset: -1px; z-index: 3; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: radial-gradient(300px circle at var(--mx, 50%) var(--my, -40%), rgba(var(--acc), calc(var(--lit) * 0.85)), transparent 62%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude;
+}
+.glass::after,
+.demo__panel::after, .demo__meet::after, .oc::after::after, .demo__headline::after, .demo__invite::after, .mm-vp::after, .demo__idle::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(460px circle at var(--mx, 50%) var(--my, 0%), rgba(var(--acc), calc(var(--lit) * 0.07)), transparent 68%);
+}
+.is-lit { --lit: 1; }
+
+/* tiers */
+.glass--raised { box-shadow: inset 0 1px 0 var(--gl-hi), inset 0 -1px 0 var(--gl-low), var(--e3); }
+.glass--float { --g-r: 999px; -webkit-backdrop-filter: blur(20px) saturate(115%); backdrop-filter: blur(20px) saturate(115%); box-shadow: inset 0 1px 0 var(--gl-hi), var(--e3); }
+.glass--inset { background: var(--gl-well); -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: inset 0 2px 8px rgba(var(--sh), calc(0.18 * var(--shk))); border-color: var(--line); }
+.glass--lite, .hp__card, .demo__benefits li, .seq li, .mm-node { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.glass--hover { cursor: default; }
+.glass--hover:hover { transform: translateY(-3px); box-shadow: inset 0 1px 0 var(--gl-hi), inset 0 -1px 0 var(--gl-low), var(--e3); border-color: var(--line-strong); }
+
+/* subtle pointer tilt (set by glassLight.ts on [data-tilt]; never on touch / reduced motion) */
+[data-tilt] { transform: perspective(1200px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 0.6s var(--ease-out), --lit 0.55s var(--ease-out), box-shadow var(--dur-m); }
+[data-tilt].is-lit { transition-duration: 0.14s, 0.55s, var(--dur-m); }
+
+/* cards that are not panels but should still read as solid, rich surfaces */
+.hp__card, .demo__benefits li, .seq li {
+  background: linear-gradient(150deg, var(--gl-card-a), var(--gl-card-b));
+  border: 1px solid var(--line);
+  box-shadow: inset 0 1px 0 var(--gl-hi), var(--e1);
+}
+.oc { --g-r: 16px; overflow: hidden; }
+.oc > header { background: rgba(var(--tint), 0.04); }
+.mm-vp { --g-r: 18px; background: radial-gradient(900px 520px at 50% 45%, rgba(var(--tint), 0.06), transparent 70%), var(--bg); }
+.mm-node--leaf { background: rgba(var(--tint), 0.07) !important; }
+.mm-node--primary { background: linear-gradient(180deg, rgba(var(--acc), 0.2), rgba(var(--acc), 0.06)) !important; }
+
+/* header / dock / menus: floating cream glass, always legible over light and dark sections */
+.hdr.is-scrolled { background: rgba(249, 246, 239, 0.9); -webkit-backdrop-filter: blur(18px) saturate(112%); backdrop-filter: blur(18px) saturate(112%); border-bottom-color: rgba(52, 58, 58, 0.12); box-shadow: 0 10px 30px -20px rgba(52, 58, 58, 0.35); }
+.dock ul, .mnav__panel {
+  background: linear-gradient(145deg, rgba(249, 246, 239, 0.95), rgba(232, 225, 214, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.8); -webkit-backdrop-filter: blur(20px) saturate(112%); backdrop-filter: blur(20px) saturate(112%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 14px 34px -14px rgba(52, 58, 58, 0.34), 0 0 0 1px rgba(52, 58, 58, 0.08);
+}
+.demos__tabs button, .presets button { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.fld input, .fld select, .fld textarea { background: var(--gl-well); border-color: var(--line); box-shadow: inset 0 1px 3px rgba(var(--sh), calc(0.14 * var(--shk))); }
+.fld input:focus, .fld select:focus, .fld textarea:focus { border-color: var(--accent-ink); box-shadow: inset 0 1px 3px rgba(var(--sh), calc(0.14 * var(--shk))), 0 0 0 3px rgba(var(--acc), 0.28); }
+.pre { background: var(--gl-well); }
+
+@media (prefers-reduced-motion: reduce) { [data-tilt] { transform: none !important; } }
+@media (hover: none), (pointer: coarse) { [data-tilt] { transform: none !important; } }
+@media (max-width: 760px) {
+  .glass, .demo__panel, .demo__meet, .oc, .demo__headline, .demo__invite, .mm-vp, .demo__idle { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+}
